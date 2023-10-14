@@ -1,0 +1,125 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.hero{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(45deg, #08001f, #30197d);
+    color: #fff;
+    position: relative;
+}
+.card-body{
+    width: 120px;
+    height: 180px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    /* overflow: hidden; */
+}
+.card-text{
+    width: 100%;
+    height: 100%;
+    background: rgba(235, 0, 255, 0.11);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(40px);
+}
+.card-body::before{
+    content: '';
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    background: #f41b75;
+    border-radius: 5px;
+    /* left: -35px;
+    top: -100px; */
+    left: -35px;
+    top: -20px;
+    z-index: -1;
+    animation: z1 2s linear infinite;
+}
+.card-body::after{
+    content: '';
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    background: #419aff;
+    border-radius: 50%;
+    right: -100px;
+    bottom: -130px;
+    /* right: -5px;
+    bottom: -50px; */
+    z-index: -1;
+    animation: z 1s linear infinite;
+}
+.card-text span{
+    font-size: 80px;
+    width: 90px;
+    bottom: 15px;
+    display: inline-block;
+    text-align: center;
+    position: relative;
+}
+.card-text span::after{
+    font-size: 14px;
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#hrs::after{
+    content: 'HOURS';
+}
+#min::after{
+    content: 'MINS';
+}
+#sec::after{
+    content: 'SEC';
+}
+
+@keyframes z {
+    0%{
+        transform: rotate(0deg) scale(1);
+    }
+    20%{
+        transform: rotate(18deg) scale(1);
+    }
+    40%{
+        transform: rotate(36deg) scale(1.4);
+    }
+    60%{
+        transform: rotate(54deg) scale(1);
+    }
+    80%{
+        transform: rotate(72deg) scale(1);
+    }
+    100%{
+        transform: rotate(90deg) scale(1);
+    }
+}
+@keyframes z1 {
+    0%{
+        transform: rotate(0deg);
+    }
+    20%{
+        transform: rotate(18deg);
+    }
+    40%{
+        transform: rotate(36deg);
+    }
+    60%{
+        transform: rotate(54deg);
+    }
+    80%{
+        transform: rotate(72deg);
+    }
+    100%{
+        transform: rotate(90deg);
+    }
+}
